@@ -46,8 +46,19 @@ async function checkWeatherAndSendAlert(alert, sendAlertEmail) {
 
 // Helper function to check if current time is within the alert's time range
 function isTimeInRange(currentTime, startTime, endTime) {
-  // Compare time as HH:MM (24-hour format) for easier comparison
-  return startTime <= currentTime && currentTime <= endTime;
+  // Convert times to minutes for easier comparison
+  const currentMinutes = timeToMinutes(currentTime);
+  const startMinutes = timeToMinutes(startTime);
+  const endMinutes = timeToMinutes(endTime);
+
+  // Allow a 1-minute buffer on each side of the time range
+  return (currentMinutes >= startMinutes - 1) && (currentMinutes <= endMinutes + 1);
+}
+
+// Helper function to convert HH:MM time to minutes for easier comparison
+function timeToMinutes(timeStr) {
+  const [hours, minutes] = timeStr.split(':').map(Number);
+  return hours * 60 + minutes;
 }
 
 // Helper function to parse time in HH:MM AM/PM format to 24-hour time
