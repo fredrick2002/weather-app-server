@@ -7,8 +7,8 @@
 ### Setup Instructions
 
 1. **Download the Environment Configuration**
-   - Before starting, download the **`.env`** file from the link provided in the PDF. Due to security reasons, the `.env` file cannot be uploaded here.
-   - Paste the downloaded **`.env`** file into the project directory.
+   - Before starting, download the compressed ZIP file containing the **`.env`** file from the link provided in the PDF. Due to security reasons, the `.env` file cannot be uploaded here.
+   - Extract the contents of the ZIP file, and paste the **`.env`** file into the project directory.
 
 2. **Open the Terminal**
    - Navigate to the project directory where the server code resides. Open your terminal in that directory.
